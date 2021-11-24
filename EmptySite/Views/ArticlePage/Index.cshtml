@@ -8,6 +8,9 @@
     @Html.PropertyFor(x => x.CurrentPage.MainBody)
 </div>
 
-<div>
-    @Html.PropertyFor(x => x.CurrentPage.MainContentArea)
-</div>
+@if (@Model.EnableContentArea)
+{
+    <div>
+        @Html.PropertyFor(x => x.CurrentPage.MainContentArea)
+    </div>
+}

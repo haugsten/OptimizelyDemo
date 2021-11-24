@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="EPiServer.CMS" Version="12.1.0" />
+    <PackageReference Include="EPiServer.Find.CMS" Version="14.0.4" />
+    <PackageReference Include="EPiServer.ContentDeliveryApi.Cms" Version="3.0.0" />
+    <PackageReference Include="EPiServer.Hosting" Version="12.1.0" />
+    <PackageReference Include="EPiServer.Framework" Version="12.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.12" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+</Project>

@@ -10,27 +10,26 @@ namespace EmptySite.Models.Blocks
     public class TeaserBlock : BlockData
     {
         [CultureSpecific]
-        [Required(AllowEmptyStrings = false)]
+        [Required]
         [Display(
             GroupName = SystemTabNames.Content,
             Order = 1)]
         public virtual string Heading { get; set; }
 
         [CultureSpecific]
-        [Required(AllowEmptyStrings = false)]
+        [Required]
         [Display(
             GroupName = SystemTabNames.Content,
             Order = 2)]
         [UIHint(UIHint.Textarea)]
         public virtual string Text { get; set; }
 
-        //[CultureSpecific]
-        //[Required(AllowEmptyStrings = false)]
-        //[UIHint(UIHint.Image)]
-        //[Display(
-        //    GroupName = SystemTabNames.Content,
-        //    Order = 3)]
-        //public virtual ContentReference Image { get; set; }
+        [CultureSpecific]
+        [UIHint(UIHint.Image)]
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 3)]
+        public virtual ContentReference Image { get; set; }
 
         [Display(
             GroupName = SystemTabNames.Content,

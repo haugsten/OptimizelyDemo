@@ -3,4 +3,9 @@
 <h2>
     @Html.PropertyFor(x => x.Heading)
 </h2>
-@Html.ContentLink(Model.Link)
+
+<img src="@Url.ContentUrl(Model.Image)" width="400" />
+
+<div>
+    @Html.ContentLink(Model.Link)
+</div>

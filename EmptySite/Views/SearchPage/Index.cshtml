@@ -1,0 +1,21 @@
+﻿@model EmptySite.Models.ViewModels.SearchPageViewModel
+
+<h1>
+    @Html.PropertyFor(x => x.CurrentPage.Heading) 
+</h1>
+
+@if (Model.SearchResults != null)
+{
+    <div>
+        Antall treff: @Model.SearchResults.TotalMatching
+
+        <div>
+            @foreach (var item in Model.SearchResults)
+            {
+                <div>
+                    <h2>@item.Name</h2>
+                </div>
+            }
+        </div>
+    </div>
+}

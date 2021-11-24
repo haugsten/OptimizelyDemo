@@ -13,14 +13,4 @@ namespace EmptySite.Models.ViewModels
             CurrentPage = page;
         }
     }
-
-    public class SearchPageViewModel : PageViewModel<SearchPage>
-    {
-        public SearchPageViewModel(SearchPage page) : base(page)
-        {
-        }
-
-        public IContentResult<PageData> SearchResults { get; set; }
-    }
-
 }

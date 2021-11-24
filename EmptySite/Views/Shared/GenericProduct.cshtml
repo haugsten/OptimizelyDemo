@@ -1,0 +1,11 @@
+﻿@using EmptySite.Extensions
+@model EmptySite.Models.Catalog.GenericProduct
+
+<h2>
+    @Html.PropertyFor(x => x.Title)
+</h2>
+
+
+<a href="@Url.ContentUrl(Model.ContentLink)">
+    <img src="@Url.ContentUrl(Model.AssetImageUrl())" width="400" />
+</a>

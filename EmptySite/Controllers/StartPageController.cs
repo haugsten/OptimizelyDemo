@@ -1,8 +1,8 @@
-﻿using System;
-using EmptySite.Models.Pages;
-using EPiServer;
+﻿using EmptySite.Models.Pages;
+using EmptySite.Models.ViewModels;
 using EPiServer.Core;
-using EPiServer.Framework.DataAnnotations;
+using EPiServer.Find;
+using EPiServer.Find.Cms;
 using EPiServer.Web.Mvc;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,35 +17,26 @@ namespace EmptySite.Controllers
         }
     }
 
-    [TemplateDescriptor(Inherited = true)]
-    public class DefaultPageController : PageController<PageData>
+    public class SearchPageController : PageController<SearchPage>
     {
+        private readonly IClient _searchClient;
 
-        public IActionResult Index(PageData currentPage)
+        public SearchPageController(IClient searchClient)
         {
-            var model = CreateModel(currentPage);
-            return View($"~/Views/{currentPage.GetOriginalType().Name}/Index.cshtml", model);
+            _searchClient = searchClient;
         }
 
-        private IPageViewModel<PageData> CreateModel(PageData page)
+        public IActionResult Index(SearchPage currentPage, string query)
         {
-            var type = typeof(PageViewModel<>).MakeGenericType(page.GetOriginalType());
-            return Activator.CreateInstance(type, page) as IPageViewModel<PageData>;
+            var searchResults = _searchClient.Search<PageData>()
+                .For(query)
+                .FilterForVisitor()
+                .GetContentResult();
+
+            var model = new SearchPageViewModel(currentPage);
+            model.SearchResults = searchResults;
+
+            return View(model);
         }
     }
-    public interface IPageViewModel<out T> where T : PageData
-    {
-        T CurrentPage { get; }
-    }
-
-    public class PageViewModel<T> : IPageViewModel<T> where T : PageData
-    {
-        public T CurrentPage { get; set; }
-
-        public PageViewModel(T page)
-        {
-            CurrentPage = page;
-        }
-    }
-    
 }

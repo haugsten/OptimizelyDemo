@@ -1,0 +1,5 @@
+2021-11-23 19:40:00.638 +01:00 [INF] Running create-commerce-database command.
+2021-11-23 19:45:25.754 +01:00 [INF] Running create-commerce-database command.
+2021-11-23 19:54:08.872 +01:00 [INF] Running create-commerce-database command.
+2021-11-23 19:54:10.022 +01:00 [WRN] The username EPiServerDB_7c70c2ecUser already exists on the server, no need to create.
+2021-11-23 19:54:10.127 +01:00 [INF] create-commerce-database has completed.

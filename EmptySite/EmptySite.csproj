@@ -4,12 +4,15 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="EPiServer.CMS" Version="12.1.0" />
+    <PackageReference Include="EPiServer.Commerce" Version="14.0.3" />
+    <PackageReference Include="EPiServer.Cms" Version="12.1.0" />
     <PackageReference Include="EPiServer.Find.CMS" Version="14.0.4" />
+    <PackageReference Include="EPiServer.Find.Commerce" Version="12.0.1" />
     <PackageReference Include="EPiServer.ContentDeliveryApi.Cms" Version="3.0.0" />
     <PackageReference Include="EPiServer.Hosting" Version="12.1.0" />
     <PackageReference Include="EPiServer.Framework" Version="12.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.12" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 </Project>

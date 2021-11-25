@@ -1,6 +1,4 @@
-﻿using EmptySite.Models.Pages;
-using EPiServer.Core;
-using EPiServer.Find.Cms;
+﻿using EPiServer.Core;
 
 namespace EmptySite.Models.ViewModels
 {
@@ -12,5 +10,7 @@ namespace EmptySite.Models.ViewModels
         {
             CurrentPage = page;
         }
+
+        public bool ShowContentArea { get; set; }
     }
 }

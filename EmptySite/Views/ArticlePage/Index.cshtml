@@ -8,7 +8,14 @@
     @Html.PropertyFor(x => x.CurrentPage.MainBody)
 </div>
 
-
 <div>
     @Html.PropertyFor(x => x.CurrentPage.MainContentArea)
 </div>
+
+@if (Model.ShowContentArea)
+{
+    <h2>Feature for Beta users</h2>
+    <div>
+        @Html.PropertyFor(x => x.CurrentPage.ProductsContentArea)
+    </div>
+}

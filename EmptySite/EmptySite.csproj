@@ -14,5 +14,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.12" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
     <Folder Include="wwwroot\" />
+    <PackageReference Include="Optimizely.SDK" Version="3.10.0" />
   </ItemGroup>
 </Project>

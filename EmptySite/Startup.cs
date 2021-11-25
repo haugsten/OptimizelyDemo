@@ -1,4 +1,5 @@
 ﻿using EmptySite.Extensions;
+using EPiServer.Cms.UI.AspNetIdentity;
 using EPiServer.Data;
 using EPiServer.Web.Routing;
 using Microsoft.AspNetCore.Builder;
@@ -42,14 +43,11 @@ namespace EmptySite
             services.AddMvc();
             services.TryAddSingleton<EPiServer.Commerce.Security.Internal.CommercePolicyVerification>();
             services.AddCommerce()
+                //.AddCmsAspNetIdentity<ApplicationUser>()
                 .AddOpenIdConnect()
                 .AddFind();
 
-            services.AddContentDeliveryApi(options =>
-            {
-                options.DisableScopeValidation = true;
-                options.SiteDefinitionApiEnabled = true;
-            });
+            services.AddContentDeliveryApi();
 
             services.ConfigureApplicationCookie(options =>
             {

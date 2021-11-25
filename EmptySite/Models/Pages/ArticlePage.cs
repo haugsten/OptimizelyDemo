@@ -31,6 +31,14 @@ namespace EmptySite.Models.Pages
             Order = 30)]
         public virtual ContentArea MainContentArea { get; set; }
 
+        [CultureSpecific]
+        [Display(
+            Name = "Products",
+            Description = "Description for this property.",
+            GroupName = SystemTabNames.Content,
+            Order = 40)]
+        public virtual ContentArea ProductsContentArea { get; set; }
+
         public int NumberOfCharsInHeading()
         {
             return string.IsNullOrWhiteSpace(Heading) ? 0 : Heading.Length;
